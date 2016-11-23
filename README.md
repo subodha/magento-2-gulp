@@ -1,5 +1,7 @@
 # magento-2-gulp
 Gulp for Magento 2
+
+
 /* ================ Comparing with Grunt ============ */
 
 Compilation of all themes (10 files):<br/>
