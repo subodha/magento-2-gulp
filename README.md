@@ -14,13 +14,13 @@ Custom theme compilation (2 files):<br/>
 
 /* ================ Installation ==================== */
 
-1. Download as a zip zile or clone this in to ur pc.
+1. Download as a zip file or clone this in to ur pc.
 
 2. Copy "gulpfile.js" and "package.json" in to the root directory (codepool)
 
 3. Install node.js for your OS: https://nodejs.org/en/
 
-4. Install modules: run a command in a root directory of your project "npm install"
+4. Install modules: run a command in a root directory of your project "npm install".
 <br/>(If you alrady instaled Grunt please remove node_module directory)
    
 /* ================ How to run ====================== */
