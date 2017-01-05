@@ -35,7 +35,10 @@ var gulp = require('gulp'),
   	sourcemaps = require('gulp-sourcemaps'),
   	cssmin = require('gulp-cssmin'),
   	livereload = require('gulp-livereload'),
-  	gulpif = require('gulp-if');
+  	gulpif = require('gulp-if'),
+    	colors = require('colors'),
+	exec = require('child_process').exec;
+
 
 
 /* ==========================================================================
@@ -153,3 +156,19 @@ gulp.task('watch', function() {
 
 	gulp.watch([path + '**/*.less'],['less']);
 });
+
+// Exec task
+gulp.task('exec', function (cb) {
+
+	if (themeName) {
+		exec('php bin/magento dev:source-theme:deploy --locale="' + themesConfig[themeName].locale + '" --area="' + themesConfig[themeName].area + '" --theme="' + themesConfig[themeName].name + '"', function (err, stdout, stderr) {
+			console.log(stdout);
+			console.log(stderr);
+			cb(err);
+		});
+	}
+
+	else {
+		console.log('Please add your defined Theme  ex: --luma'.red);
+	}
+})
