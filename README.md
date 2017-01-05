@@ -26,7 +26,6 @@ Custom theme compilation (2 files):<br/>
 /* ================ How to run ====================== */
 
 1. Run : php bin\magento dev:source-theme:deploy --locale="en_AU" --area="frontend" <br/>--theme="Netstarter/YOURTHEMENAME"
-
     <br/>
     Or
     <br/>
