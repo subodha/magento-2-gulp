@@ -27,10 +27,10 @@ Custom theme compilation (2 files):<br/>
 
 1. Run : php bin\magento dev:source-theme:deploy --locale="en_AU" --area="frontend" <br/>--theme="Netstarter/YOURTHEMENAME"
 
-<br/>
-Or
-<br/>
-gulp exec --theme  ex: gulp exec --luma
+    <br/>
+    Or
+    <br/>
+    gulp exec --theme  ex: gulp exec --luma
 
 2. Run : php bin\magento setup:static-content:deploy en_AU
 
