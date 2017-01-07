@@ -172,3 +172,19 @@ gulp.task('exec', function (cb) {
 		console.log('Please add your defined Theme  ex: --luma'.red);
 	}
 })
+
+// Static content deploy task
+gulp.task('deploy', function (cb) {
+	if (themeName) {
+		exec('php bin/magento setup:static-content:deploy ' + themesConfig[themeName].locale + '', function (err, stdout, stderr) {
+Add a comment to this line
+ 			console.log(stdout);
+ 			console.log(stderr);
+ 			cb(err);
+ 		});
+ 	}
+ 
+ 	else {
+ 		console.log('Please add your defined Theme  ex: --luma'.red);
+ 	}
+ })
