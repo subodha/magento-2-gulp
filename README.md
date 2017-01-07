@@ -2,7 +2,7 @@
 Gulp for Magento 2
 
 
-/* ================ Comparing with Grunt ============ */
+<h3>Comparing with Grunt</h3>
 
 Compilation of all themes (10 files):<br/>
   Gulp: 16sec<br/>
@@ -12,7 +12,7 @@ Custom theme compilation (2 files):<br/>
   Gulp: 4.5s<br/>
   Grunt: 11.2s<br/>
 
-/* ================ Installation ==================== */
+<h3>Installation</h3>
 
 1. Download as a zip file or clone this in to ur pc.
 
@@ -23,7 +23,7 @@ Custom theme compilation (2 files):<br/>
 4. Install modules: run a command in a root directory of your project "npm install".
 <br/>(If you alrady instaled Grunt please remove node_module directory)
    
-/* ================ How to run ====================== */
+<h3>How to run</h3>
 
 1. Run : php bin\magento dev:source-theme:deploy --locale="en_AU" --area="frontend" <br/>--theme="Netstarter/YOURTHEMENAME"
     <br/>
@@ -32,6 +32,10 @@ Custom theme compilation (2 files):<br/>
     gulp exec --theme  ex: gulp exec --luma
 
 2. Run : php bin\magento setup:static-content:deploy en_AU
+    <br/>
+    Or
+    <br/>
+    gulp deploy --theme  ex: gulp deploy --luma
 
 3. Run gulp command in the root directory with arguments or without. Examples:<br/>
 3.a. Compilation of all themes: gulp<br/>
