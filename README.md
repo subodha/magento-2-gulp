@@ -26,7 +26,7 @@ Custom theme compilation (2 files):<br/>
 <h2>How to run</h2>
 
 1. Run : <code>gulp exec --theme</code>  ex: gulp exec --luma
-    <br/>Or:  <code>php bin\magento dev:source-theme:deploy --locale="en_AU" --area="frontend" <br/>--theme="Netstarter/YOURTHEMENAME"</code>
+    <br/>Or:  <code>php bin\magento dev:source-theme:deploy --locale="en_AU" --area="frontend" <br/>--theme="VendorName/themeName"</code>
    
 2. Run : <code>gulp deploy --theme</code>  ex: gulp deploy --luma
     <br/>Or: <code>php bin\magento setup:static-content:deploy en_AU</code>
