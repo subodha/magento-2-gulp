@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Gulp for Magento 2 by Subodha Pathiraja</title>
-</head>
-
-<body>
-<h1>magento-2-gulp</h1>
+# magento-2-gulp
 Gulp for Magento 2
 
 
@@ -52,6 +44,3 @@ Custom theme compilation (2 files):<br/>
 4. For using liveReload install extension for your browser: http://livereload.com/
 <br/>4.a. Turn on the extension on the page of project.
 
-</body>
-
-</html>
