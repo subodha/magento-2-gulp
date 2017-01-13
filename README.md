@@ -40,6 +40,7 @@ Custom theme compilation (2 files):<br/>
 3.e. Compilation of certain theme with sourcemap(+~1.5s), can't be used with minification: <code>gulp less --luma --map</code><br/>
 3.f. Compilation with live reload: <code>gulp less --luma --live</code><br/>
 3.g. Watcher with liveReload: <code>gulp watch --luma --live</code><br/>
+3.h. For clear the magento cache: <code>gulp cache-flush</code><br/>
     
 4. For using liveReload install extension for your browser: http://livereload.com/
 <br/>4.a. Turn on the extension on the page of project.
