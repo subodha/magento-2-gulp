@@ -23,6 +23,7 @@
 * 3.f. Compilation with live reload: gulp less --luma --live<br/>
 * 3.g. Watcher with liveReload: gulp watch --luma --live<br/>   
 * 4. For using liveReload install extension for your browser: http://livereload.com/
+* 5. For clear the magento cache: gulp cache-flush
 <br/>4.a. Turn on the extension on the page of project.
  */
 
