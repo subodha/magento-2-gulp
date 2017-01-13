@@ -187,3 +187,13 @@ gulp.task('deploy', function (cb) {
  		console.log('Please add your defined Theme  ex: --luma'.red);
  	}
  })
+
+
+// cache flush task
+gulp.task('cache-flush', function (cb) {
+		exec('php bin/magento cache:flush', function (err, stdout, stderr) {
+			console.log(stdout);
+			console.log(stderr);
+			cb(err);
+		});
+})
