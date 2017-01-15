@@ -1,7 +1,11 @@
 # magento-2-gulp
 Gulp for Magento 2
 
-<p>Magento 2 have some difficult for speed up workshop in frontend development with the grunt, the solution is the Gulp. This plugin allows you to using gulp with Magento 2. Gulp is a task/build runner which uses Node.js for web development. The main difference between Gulp and Grunt lies in how they deal with their automation tasks on the inside. Gulp uses Node streams while Grunt uses temp files.There for gulp compiling is faster than Grunt.</p>
+<p>As a Magento 2 frontend developer you might have noticed that less to css compilation process is slow with grunt and it takes more time to rebuild everything making you an inefficient developer. </p>
+
+<p>However, you could solve this problem with Gulp. Gulp is a task / build runner which uses Node.js for web development. The main difference between Gulp and Grunt lies in how they deal with their automation tasks inside. </p>
+
+<p>Gulp uses Node Stream while Grunt uses temp files. Therefore, Gulp compilation is faster compared to Grunt. </p>
 
 
 <h2>Comparing with Grunt</h2>
