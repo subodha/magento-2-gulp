@@ -23,7 +23,9 @@ Gulp for Magento 2
 
 3. Install node.js for your OS: https://nodejs.org/en/
 
-4. Install modules: run a command in a root directory of your project "npm install".
+4. Install gulp globaly using <code>npm install -g gulp-cli</code>
+
+5. Install modules: run a command in a root directory of your project "npm install".
 <br/>(If you alrady instaled Grunt please remove node_module directory)
    
 <h2>How to run</h2>
