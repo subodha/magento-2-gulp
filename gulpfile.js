@@ -2,7 +2,8 @@
    Installation and how to use
    ========================================================================== */
 /*
- * 1. Copy gulpfile and package.json in to the root directory
+ * 1. Copy gulpfile and package.json in to the root directory 
+ * 3. If you are using Magento 2.2.2 or heigher height Un-comment line number 50 - 51in the gulpfile.js
  * 2. Install node.js for your OS: https://nodejs.org/en/
  * 3. Install modules: run a command in a root directory of your project "npm install"
 	  (If you alrady instaled Grunt please remove node_module directory)
@@ -46,9 +47,9 @@ var gulp = require('gulp'),
 /* ==========================================================================
    Global configs of Magento2
    ========================================================================== */
-// Un-comment for Magento 2.2.2
-/*var filesRouter = require('./dev/tools/grunt/tools/files-router');
-filesRouter.set('themes','./dev/tools/grunt/configs/themes' );*/
+// If you are using Magento 2.2.2 or heigher height Un-comment below two line 
+///var filesRouter = require('./dev/tools/grunt/tools/files-router');
+//filesRouter.set('themes','./dev/tools/grunt/configs/themes' );
 
 
 var themesConfig = require('./dev/tools/grunt/configs/themes'),
