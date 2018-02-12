@@ -20,6 +20,7 @@ Gulp for Magento 2
 1. Download as a zip file or clone this in to ur pc.
 
 2. Copy "gulpfile.js" and "package.json" in to the root directory (codepool)
+   (If you are using Magento 2.2.2 or heigher height Un-comment line number 50 - 51in the gulpfile.js)
 
 3. Install node.js for your OS: https://nodejs.org/en/
 
