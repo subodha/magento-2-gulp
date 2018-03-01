@@ -1,38 +1,38 @@
 /* ==========================================================================
-   Installation and how to use
-   ========================================================================== */
+ Installation and how to use
+ ========================================================================== */
 /*
- * 1. Copy gulpfile and package.json in to the root directory 
+ * 1. Copy gulpfile and package.json in to the root directory
  * 3. If you are using Magento 2.2.2 or heigher height Un-comment line number 50 - 51in the gulpfile.js
  * 2. Install node.js for your OS: https://nodejs.org/en/
  * 3. Install modules: run a command in a root directory of your project "npm install"
-	  (If you alrady instaled Grunt please remove node_module directory)
-*/
+ (If you alrady instaled Grunt please remove node_module directory)
+ */
 
 /* ==========================================================================
-   How to use
-   ========================================================================== */
+ How to use
+ ========================================================================== */
 /*
-* 1. Run : php bin\magento dev:source-theme:deploy --locale="en_AU" --area="Frontend" --theme="Netstarter/YOURTHEMENAME"
-* 2. Run : php bin\magento setup:static-content:deploy en_AU
-* 3. Run gulp command in the root directory with arguments or without. Examples:<br/>
-* 3.a. Compilation of all themes: gulp<br/>
-* 3.b. Compilation of certain theme: gulp less --luma<br/>
-* 3.c. Watcher of certain theme: gulp watch --luma<br/>
-* 3.d. Compilation of certain theme with minification (+~2.5s): gulp less --luma --min<br/>
-* 3.e. Compilation of certain theme with sourcemap(+~1.5s), can't be used with minification: gulp less --luma --map<br/>
-* 3.f. Compilation with live reload: gulp less --luma --live<br/>
-* 3.g. Watcher with liveReload: gulp watch --luma --live<br/>
-* 4. For using liveReload install extension for your browser: http://livereload.com/
-* 5. For clear the magento cache: gulp cache-flush
-* 6. For clear the magento static files cache: gulp clean --luma
-<br/>4.a. Turn on the extension on the page of project.
+ * 1. Run : php bin\magento dev:source-theme:deploy --locale="en_AU" --area="Frontend" --theme="Netstarter/YOURTHEMENAME"
+ * 2. Run : php bin\magento setup:static-content:deploy en_AU
+ * 3. Run gulp command in the root directory with arguments or without. Examples:<br/>
+ * 3.a. Compilation of all themes: gulp<br/>
+ * 3.b. Compilation of certain theme: gulp less --luma<br/>
+ * 3.c. Watcher of certain theme: gulp watch --luma<br/>
+ * 3.d. Compilation of certain theme with minification (+~2.5s): gulp less --luma --min<br/>
+ * 3.e. Compilation of certain theme with sourcemap(+~1.5s), can't be used with minification: gulp less --luma --map<br/>
+ * 3.f. Compilation with live reload: gulp less --luma --live<br/>
+ * 3.g. Watcher with liveReload: gulp watch --luma --live<br/>
+ * 4. For using liveReload install extension for your browser: http://livereload.com/
+ * 5. For clear the magento cache: gulp cache-flush
+ * 6. For clear the magento static files cache: gulp clean --luma
+ <br/>4.a. Turn on the extension on the page of project.
  */
 
 
 /* ==========================================================================
-   Required modules
-   ========================================================================== */
+ Required modules
+ ========================================================================== */
 var gulp = require('gulp'),
     less = require('gulp-less'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -46,9 +46,9 @@ var gulp = require('gulp'),
 
 
 /* ==========================================================================
-   Global configs of Magento2
-   ========================================================================== */
-// If you are using Magento 2.2.2 or heigher height Un-comment below two line 
+ Global configs of Magento2
+ ========================================================================== */
+// If you are using Magento 2.2.2 or heigher height Un-comment below two line
 ///var filesRouter = require('./dev/tools/grunt/tools/files-router');
 //filesRouter.set('themes','./dev/tools/grunt/configs/themes' );
 
@@ -58,8 +58,8 @@ var themesConfig = require('./dev/tools/grunt/configs/themes'),
 
 
 /* ==========================================================================
-   Variables
-   ========================================================================== */
+ Variables
+ ========================================================================== */
 
 // Get all arguments
 var devArguments = [];
@@ -110,8 +110,8 @@ else {
 }
 
 /* ==========================================================================
-   Gulp tasks
-   ========================================================================== */
+ Gulp tasks
+ ========================================================================== */
 
 // Default task. Run compilation for all themes
 gulp.task('default', ['less']);
@@ -129,7 +129,7 @@ gulp.task('less', function() {
     // Get Array with files
     return gulp.src(lessFiles)
 
-        // Source map
+    // Source map
         .pipe(gulpif(sourceMapArg >= 0, sourcemaps.init()))
 
         // Less compilation
@@ -166,7 +166,7 @@ gulp.task('watch', function() {
 
 // Exec task
 gulp.task('exec', function(cb) {
-
+    gulp.start('clean');
     if (themeName) {
         exec('php bin/magento dev:source-theme:deploy --locale="' + themesConfig[themeName].locale + '" --area="' + themesConfig[themeName].area + '" --theme="' + themesConfig[themeName].name + '"', function(err, stdout, stderr) {
             console.log(stdout);
