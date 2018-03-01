@@ -40,7 +40,7 @@ var gulp = require('gulp'),
   	livereload = require('gulp-livereload'),
   	gulpif = require('gulp-if'),
   	colors = require('colors'),
-    clean = require('gulp-clean'),
+  	clean = require('gulp-clean'),
 	exec = require('child_process').exec;
 
 
@@ -218,8 +218,8 @@ gulp.task('clean', function (cb) {
         for (var i = 0; i < folders.length; i++) {
         	console.log('Removing: ' + folders[i]);
         	gulp.src(folders[i], {read: false})
-            	.pipe(clean());
-        }
+        		.pipe(clean());
+    	}
 	}
 
 	else {
