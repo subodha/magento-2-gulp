@@ -39,7 +39,8 @@ var gulp = require('gulp'),
   	cssmin = require('gulp-cssmin'),
   	livereload = require('gulp-livereload'),
   	gulpif = require('gulp-if'),
-    	colors = require('colors'),
+  	colors = require('colors'),
+    clean = require('gulp-clean'),
 	exec = require('child_process').exec;
 
 
@@ -208,13 +209,17 @@ gulp.task('cache-flush', function (cb) {
 // Clean static files cache
 gulp.task('clean', function (cb) {
 	if (themeName) {
-		exec('rm -rf var/cache var/view_preprocessed pub/static/' + themesConfig[themeName].area + '/' +
-		themesConfig[themeName].name + '/',
-		function (err, stdout, stderr) {
-			console.log(stdout);
-			console.log(stderr);
-			cb(err);
-		});
+        var folders = [
+        	'var/cache',
+        	'var/view_preprocessed',
+        	'pub/static/'  + themesConfig[themeName].area + '/' + themesConfig[themeName].name + '/'
+        ];
+
+        for (var i = 0; i < folders.length; i++) {
+        	console.log('Removing: ' + folders[i]);
+        	gulp.src(folders[i], {read: false})
+            	.pipe(clean());
+        }
 	}
 
 	else {
