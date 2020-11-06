@@ -169,7 +169,7 @@ gulp.task('watch', function() {
 gulp.task('exec', function (cb) {
 
 	if (themeName) {
-		exec('php bin/magento dev:source-theme:deploy --locale="' + themesConfig[themeName].locale + '" --area="' + themesConfig[themeName].area + '" --theme="' + themesConfig[themeName].name + '"', function (err, stdout, stderr) {
+		exec('php bin/magento dev:source-theme:deploy --locale="' + themesConfig[themeName].locale + '" --area="' + themesConfig[themeName].area + '" --theme="' + themesConfig[themeName].name + '" ' + themesConfig[themeName].files.join(' '), function (err, stdout, stderr) {
 			console.log(stdout);
 			console.log(stderr);
 			cb(err);
