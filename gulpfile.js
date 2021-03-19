@@ -114,9 +114,6 @@ else {
    Gulp tasks
    ========================================================================== */
 
-// Default task. Run compilation for all themes
-gulp.task('default', ['less']);
-
 // Less task
 gulp.task('less', function() {
 	// Console info
@@ -221,3 +218,6 @@ gulp.task('clean', function (cb) {
  		console.log('Please add your defined Theme  ex: --luma'.red);
  	}
 });
+
+// Default task. Run compilation for all themes
+gulp.task('default', gulp.series('less'));
