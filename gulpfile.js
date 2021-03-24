@@ -159,7 +159,7 @@ gulp.task('watch', function() {
 
 	console.log('\x1b[32m', '====================================' ,'\x1b[0m');
 
-	gulp.watch([path + '**/*.less'],['less']);
+	gulp.watch([path + '**/*.less'],gulp.series('less'));
 });
 
 // Exec task
