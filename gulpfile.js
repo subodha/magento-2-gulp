@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     gulpif = require('gulp-if'),
     exec = require('child_process').exec;
+require('colors');
 
 /* ==========================================================================
  * Global configs of Magento 2
@@ -78,8 +79,17 @@ else {
 }
 
 /* ==========================================================================
-   Gulp tasks
-   ========================================================================== */
+ * Gulp functions
+ * ========================================================================== */
+
+function swallowError(error) {
+    console.log(error.toString())
+    this.emit('end')
+}
+
+/* ==========================================================================
+ * Gulp tasks
+ * ========================================================================== */
 
 // Less task
 gulp.task('less', function () {
@@ -98,9 +108,7 @@ gulp.task('less', function () {
         .pipe(gulpif(sourceMapArg >= 0, sourcemaps.init()))
 
         // Less compilation
-        .pipe(less().on('error', function (err) {
-            console.log(err);
-        }))
+        .pipe(less()).on('error', swallowError)
 
         // Minify css
         .pipe(gulpif(minCssArg >= 0, cssmin()))
@@ -126,7 +134,7 @@ gulp.task('watch', function () {
 
     console.log('\x1b[32m', '====================================', '\x1b[0m');
 
-    gulp.watch([path + '**/*.less'], ['less']);
+    gulp.watch([path + '**/*.less'], gulp.series('less'));
 });
 
 // Exec task
@@ -137,9 +145,11 @@ gulp.task('exec', function (cb) {
             console.log(stdout);
             console.log(stderr);
             cb(err);
+            console.log('Success!'.green);
         });
     } else {
         console.log('Please add your defined Theme  ex: --luma'.red);
+        cb();
     }
 });
 
@@ -153,6 +163,7 @@ gulp.task('deploy', function (cb) {
         });
     } else {
         console.log('Please add your defined Theme  ex: --luma'.red);
+        cb();
     }
 });
 
@@ -177,8 +188,12 @@ gulp.task('clean', function (cb) {
             });
     } else {
         console.log('Please add your defined Theme  ex: --luma'.red);
+        cb();
     }
 });
 
 // Default task. Run compilation for all themes
 gulp.task('default', gulp.series('less'));
+
+// Clean, build, compile
+gulp.task('build', gulp.series('clean', 'exec', 'less'));
