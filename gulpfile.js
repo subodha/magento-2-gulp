@@ -1,7 +1,7 @@
 /**
  * Magento 2 Gulp integration
  *
- * @see https://github.com/subodha/magento-2-gulp
+ * @see https://github.com/subodha/magento-2-gulp#readme
  * @see README.md for installation and how-to instructions
  */
 
