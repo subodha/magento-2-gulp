@@ -14,17 +14,18 @@ var gulp = require('gulp'),
     cssmin = require('gulp-cssmin'),
     livereload = require('gulp-livereload'),
     gulpif = require('gulp-if'),
-    exec = require('child_process').exec;
+    exec = require('child_process').exec,
+    cwd = process.cwd();
 require('colors');
 
 /* ==========================================================================
  * Global configs of Magento 2
  * ========================================================================== */
 // If you are using Magento 2.2.1 or lower comment below two lines
-var filesRouter = require('./dev/tools/grunt/tools/files-router');
-filesRouter.set('themes', './dev/tools/grunt/configs/themes');
+var filesRouter = require(cwd + '/dev/tools/grunt/tools/files-router');
+filesRouter.set('themes', cwd + '/dev/tools/grunt/configs/themes');
 
-var themesConfig = require('./dev/tools/grunt/configs/themes');
+var themesConfig = require(cwd + '/dev/tools/grunt/configs/themes');
 
 /* ==========================================================================
  * Variables
@@ -36,8 +37,12 @@ for (i = 3; i <= process.argv.length - 1; i++) {
     if (!process.argv[i]) {
         return false;
     } else {
-        var argument = process.argv[i].toString().replace('--', '');
-        devArguments.push(argument);
+        var argument = process.argv[i].toString(),
+            cleanedArgument = argument.replace('--', '');
+
+        if (argument.indexOf('--cwd') === -1 && argument !== cleanedArgument) {
+            devArguments.push(cleanedArgument);
+        }
     }
 }
 
@@ -58,7 +63,7 @@ var path, i;
 if (!themeName) {
     for (i in themesConfig) {
         // Create path
-        path = './pub/static/' + themesConfig[i].area + '/' + themesConfig[i].name + '/' + themesConfig[i].locale + '/';
+        path = cwd + '/pub/static/' + themesConfig[i].area + '/' + themesConfig[i].name + '/' + themesConfig[i].locale + '/';
 
         // Push names of less files to the Array
         for (var j in themesConfig[i].files) {
@@ -70,7 +75,7 @@ if (!themeName) {
 // Get certain theme, create paths for less files and push them to the Array.
 else {
     // Create path
-    path = './pub/static/' + themesConfig[themeName].area + '/' + themesConfig[themeName].name + '/' + themesConfig[themeName].locale + '/';
+    path = cwd + '/pub/static/' + themesConfig[themeName].area + '/' + themesConfig[themeName].name + '/' + themesConfig[themeName].locale + '/';
 
     // Push names of less files to the Array
     for (i in themesConfig[themeName].files) {

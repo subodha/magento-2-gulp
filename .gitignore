@@ -1,1 +1,13 @@
+# IDE
+.idea
+
+# OS
+.DS_Store
+
+# package files
 node_modules
+vendor
+
+# lock files
+package-lock.json
+composer.lock

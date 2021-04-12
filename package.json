@@ -1,14 +1,26 @@
 {
     "name": "magento-2-gulp",
-    "version": "1.1.0",
-    "description": "Gulp for Magento 2",
-    "main": "gulpfile.js",
+    "version": "1.2.0",
+    "description": "Generating stylesheets for Magento 2 with gulp",
+    "homepage": "https://github.com/subodha/magento-2-gulp#readme",
+    "license": "GPL-3.0",
+    "author": "Subodha Pathiraja",
+    "contributors": [
+        {
+            "name": "Subodha Pathiraja"
+        },
+        {
+            "name": "Sebastian Hartmann"
+        },
+        {
+            "name": "Simon Sippert"
+        }
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/subodha/magento-2-gulp.git"
     },
-    "author": "Subodha Pathiraja",
-    "homepage": "https://github.com/subodha/magento-2-gulp#readme",
+    "main": "gulpfile.js",
     "devDependencies": {
         "colors": "^1.3.0",
         "gulp": "^4.0.2",
