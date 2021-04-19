@@ -1,0 +1,8 @@
+{
+    "name": "subodha/magento-2-gulp",
+    "description": "Generating stylesheets for Magento 2 with gulp",
+    "license": "GPL-3.0-only",
+    "bin": [
+        "bin/gulpm2"
+    ]
+}

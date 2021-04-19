@@ -1,0 +1,16 @@
+#!/bin/bash
+# get script path
+ORIGINAL_SCRIPT_PATH="$0"
+if [ -L "$0" ]
+then
+    SCRIPT_PATH=$(readlink $ORIGINAL_SCRIPT_PATH)
+    SCRIPT_PATH=$(dirname $ORIGINAL_SCRIPT_PATH)/$SCRIPT_PATH
+else
+    SCRIPT_PATH=$ORIGINAL_SCRIPT_PATH
+fi
+
+# get package directory
+PACKAGE_DIR=$(dirname $SCRIPT_PATH)/../
+
+# execute gulp with given parameters
+gulp -f=$PACKAGE_DIR/gulpfile.js --cwd=$PWD "$@"
